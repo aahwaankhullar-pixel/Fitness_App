@@ -55,7 +55,6 @@ class _AvatarPageState extends State<AvatarPage> {
           padding: EdgeInsets.fromLTRB(
               20, statusBarHeight + kToolbarHeight, 20, 20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Top image
               Image.asset(
