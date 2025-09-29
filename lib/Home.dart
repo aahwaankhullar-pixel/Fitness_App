@@ -63,6 +63,103 @@ class _HomeState extends State<Home> {
                 ]
               ),
             ),
+            SizedBox(height:20),
+            Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    width: MediaQuery.of(context).size.width/2-25,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.lightBlueAccent, width: 1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    child: Column(
+                      children: [
+                        Text("👟",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text("Steps today",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text("2450",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        )
+
+
+                      ],
+
+
+                    ),
+                  ),
+                  SizedBox(width: 10,),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    width: MediaQuery.of(context).size.width/2-25,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.pinkAccent, width: 1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Text("⭐",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text("200 points",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text("Level 1",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        )
+
+
+                      ],
+
+
+                    ),
+                  )
+
+
+                  ],
+
+
+
+
+
+                )
+
           ],
         ),
       ),
