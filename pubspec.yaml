@@ -41,6 +41,7 @@ dependencies:
   hive_flutter:
   google_nav_bar:
   font_awesome_flutter:
+  primer_progress_bar:
 
 dev_dependencies:
   flutter_test:

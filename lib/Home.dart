@@ -3,6 +3,7 @@ import 'package:downsyndromeapp/navbar.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:primer_progress_bar/primer_progress_bar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,11 +14,29 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final box = Hive.box("User");
+  List<Segment> steps_segments = [
+    Segment(value: 80, color: Colors.purple,),
+    Segment(value: 14, color: Colors.grey, ),
+  ];
+  List<Segment> points_segments = [
+    Segment(value: 60, color: Colors.black,),
+    Segment(value: 14, color: Colors.grey, ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     String nickname= box.get("nickname");
     String avatar= box.get("avatar");
+    final steps_progressBar = PrimerProgressBar(
+      segments: steps_segments,
+      showLegend: false,
+
+    );
+    final points_progressBar = PrimerProgressBar(
+      segments: points_segments,
+      showLegend: false,
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
@@ -62,6 +81,91 @@ class _HomeState extends State<Home> {
                   Image.asset(avatar, width: 100,),
                 ]
               ),
+            ),
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  width: MediaQuery.of(context).size.width/2-25,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.lightBlueAccent, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+
+                  child: Column(
+                    children: [
+                      Text("👟",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text("Steps today",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text("2450",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 5,),
+                      steps_progressBar
+                    ],
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  width: MediaQuery.of(context).size.width/2-25,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.pinkAccent, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    children: [
+                      Text("⭐",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text("200 points",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text("Level 1",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 5,),
+                      points_progressBar
+                    ],
+                  ),
+                )
+              ],
             ),
           ],
         ),
