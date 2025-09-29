@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "610680825009",
+    "project_id": "groovability-dd0bb",
+    "storage_bucket": "groovability-dd0bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610680825009:android:cdfdadc4b848326d99ee90",
+        "android_client_info": {
+          "package_name": "com.example.downsyndromeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQUgTJJCtoNqi5ECTD5-kYSteFhSpY8H4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
