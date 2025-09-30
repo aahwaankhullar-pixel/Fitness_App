@@ -2,6 +2,7 @@ import "dart:async";
 
 
 import "package:downsyndromeapp/StartPage.dart";
+import "package:downsyndromeapp/exercises.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:google_nav_bar/google_nav_bar.dart";
@@ -23,7 +24,7 @@ class _NavBarState extends State<NavBar> {
 
   static List<Widget> _pages = <Widget>[
     Home(),
-    Home(),
+    Exercises(),
     Home(),
     Home(),
     Home(),

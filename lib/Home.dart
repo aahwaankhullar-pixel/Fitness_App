@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xFFE6F9E6),
                 border: Border.all(color: Colors.greenAccent.shade100, width: 3),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     width: MediaQuery.of(context).size.width/2-25,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Color(0xFFE6F0FA),
                       border: Border.all(color: Colors.lightBlueAccent, width: 1),
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w400,
-                            fontSize: 18,
+                            fontSize: 15,
                           ),
                           textAlign: TextAlign.center,
                         )
@@ -113,7 +113,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     width: MediaQuery.of(context).size.width/2-25,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Color(0xFFFDE6F0),
                       border: Border.all(color: Colors.pinkAccent, width: 1),
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w400,
-                            fontSize: 18,
+                            fontSize: 15,
                           ),
                           textAlign: TextAlign.center,
                         )
