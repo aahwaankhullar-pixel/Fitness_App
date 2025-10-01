@@ -15,11 +15,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final box = Hive.box("User");
   List<Segment> steps_segments = [
-    Segment(value: 80, color: Colors.purple,),
+    Segment(value: 80, color: Colors.white,),
     Segment(value: 14, color: Colors.grey, ),
   ];
   List<Segment> points_segments = [
-    Segment(value: 60, color: Colors.black,),
+    Segment(value: 60, color: Colors.white,),
     Segment(value: 14, color: Colors.grey, ),
   ];
 
@@ -30,11 +30,18 @@ class _HomeState extends State<Home> {
     final steps_progressBar = PrimerProgressBar(
       segments: steps_segments,
       showLegend: false,
-
+      barStyle: SegmentedBarStyle(
+        gap: 1,
+        size: 9
+      ),
     );
     final points_progressBar = PrimerProgressBar(
       segments: points_segments,
       showLegend: false,
+      barStyle: SegmentedBarStyle(
+          gap: 1,
+          size: 9
+      ),
     );
 
     return Scaffold(
@@ -57,28 +64,32 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 20,),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.greenAccent.shade100, width: 3),
+                color: Color(0xFFE6F8FA),
+                border: Border.all(color: Colors.lightBlueAccent.shade100, width: 2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
                 children: [
                   Flexible(
                     child: EasyRichText(
-                      "Today's Goal\nComplete one exercise and reach 3000 steps! ",
+                      "Today's Goal \n Complete one exercise and reach 3000 steps! ",
                       defaultStyle: TextStyle(fontWeight: FontWeight.w500),
                       patternList: [
                         EasyRichTextPattern(
                           targetString: 'Today\'s Goal',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                         ),
+                        EasyRichTextPattern(
+                          targetString: '🎯',
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                        ),
                       ],
                     ),
                   ),
                   SizedBox(width: 10,),
-                  Image.asset(avatar, width: 100,),
+                  Image.asset("assets/lion_goal.png", width: 100,),
                 ]
               ),
             ),
@@ -89,9 +100,17 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   width: MediaQuery.of(context).size.width/2-25,
                   decoration: BoxDecoration(
-                    color: Colors.white,
                     border: Border.all(color: Colors.lightBlueAccent, width: 1),
                     borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFF8AF8BA),
+                        Color(0xFF78C9F3),
+                        Color(0xFF4CBFF3),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
                   ),
 
                   child: Column(
@@ -100,23 +119,24 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w600,
-                          fontSize: 18,
+                          fontSize: 20,
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text("Steps today",
+                      SizedBox(height: 5,),
+                      Text("Steps Today",
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 16,
                         ),
                         textAlign: TextAlign.center,
                       ),
                       Text("2450",
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 16,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -130,33 +150,43 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   width: MediaQuery.of(context).size.width/2-25,
                   decoration: BoxDecoration(
-                    color: Colors.white,
                     border: Border.all(color: Colors.pinkAccent, width: 1),
                     borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFFBF82EF),
+                        Color(0xFFD8B3F8),
+                        // Color(0xFFF3ABEC),
+                        Color(0xFFF391EC),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
                   ),
                   child: Column(
                     children: [
                       Text("⭐",
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20,
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text("200 points",
+                      SizedBox(height: 5,),
+                      Text("200 Points",
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 16,
                         ),
                         textAlign: TextAlign.center,
                       ),
                       Text("Level 1",
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
                         ),
                         textAlign: TextAlign.center,
                       ),

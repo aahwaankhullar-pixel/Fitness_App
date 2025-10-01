@@ -65,19 +65,29 @@ class SplashScreen extends StatefulWidget{
 }
 
 class _SplashScreenState extends State<SplashScreen>{
+  final box=Hive.box("User");
 
   @override
   void initState() {
     super.initState();
 
     Timer(const Duration(seconds: 3),
-            (){
+      () {
+        if (box.length > 0) {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder:
+                  (context) => NavBar()
+              )
+          );
+        }
+        else {
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder:
                   (context) => StartPage()
               )
           );
         }
+      }
     );
   }
 

@@ -22,7 +22,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [ Color(0xFFE2F8C6), // Light Green (A200)
-          Color(0xFF65C7D5),], // Cyan (500)],
+              Color(0xFF65C7D5),], // Cyan (500)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
