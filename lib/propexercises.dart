@@ -63,7 +63,12 @@ class _PropExercisesState extends State<PropExercises> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.green.shade400,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFF4A7A7), Color(0xFFAF80FF)],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  border: Border.all(color:  Color(0xFFAF80FF), width: 2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -75,7 +80,7 @@ class _PropExercisesState extends State<PropExercises> {
                         Text(
                           "Exercise at Home!",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -83,13 +88,13 @@ class _PropExercisesState extends State<PropExercises> {
                         SizedBox(height: 4),
                         Text(
                           "Look around your home for these safe items and let's\nexercise together!",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
+                          style: TextStyle(color: Colors.black, fontSize: 14),
                         ),
                       ],
                     ),
                     const Icon(
                       Icons.directions_run,
-                      color: Colors.white,
+                      color: Colors.black,
                       size: 40,
                     ),
                   ],

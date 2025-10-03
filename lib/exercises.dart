@@ -58,7 +58,12 @@ class _ExercisesState extends State<Exercises> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.green.shade400,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFB2FDC9), Color(0xFF80DFFF)],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  border: Border.all(color:  Color(0xFF80DFFF), width: 2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -70,7 +75,7 @@ class _ExercisesState extends State<Exercises> {
                         Text(
                           "Your Progress",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -78,13 +83,13 @@ class _ExercisesState extends State<Exercises> {
                         SizedBox(height: 4),
                         Text(
                           "200 points earned\nKeep moving to earn more!",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
+                          style: TextStyle(color: Colors.black, fontSize: 14),
                         ),
                       ],
                     ),
                     const Icon(
                       Icons.directions_run,
-                      color: Colors.white,
+                      color: Colors.black,
                       size: 40,
                     ),
                   ],
