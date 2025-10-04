@@ -38,22 +38,20 @@ class _ExercisesState extends State<Exercises> {
               SizedBox(width: 10,),
               Column(
                 children: [
-              EasyRichText("Exercise time, $nickname 💪 \nChoose your favourite activity, friend!",
-                defaultStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),textAlign: TextAlign.left,
-                patternList: [
-                  EasyRichTextPattern(
-                    targetString: 'Exercise time, $nickname',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  EasyRichText("Exercise time, $nickname 💪 \nChoose your favourite activity, friend!",
+                    defaultStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),textAlign: TextAlign.left,
+                    patternList: [
+                      EasyRichTextPattern(
+                        targetString: 'Exercise time, $nickname',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-        
                 ],
               ),
             ],
           ),
           SizedBox(height: 20,),
-        
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -134,12 +132,9 @@ class _ExercisesState extends State<Exercises> {
                       Icon(Icons.arrow_forward_ios),
                     ],
                   ),
-        
-        
                 ),
               ),
               const SizedBox(height: 15),
-        
               // Body Parts Button
               GestureDetector(
                 onTap: (){
@@ -255,18 +250,11 @@ class _ExercisesState extends State<Exercises> {
                       ),
                     ],
                   ),
-
-
-
               ),
-                ],
+            ],
           ),
         ),
       ),
-        );
-
-
-
+    );
   }
-
-  }
+}
