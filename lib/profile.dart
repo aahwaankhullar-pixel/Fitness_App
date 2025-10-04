@@ -1,4 +1,5 @@
 import 'package:downsyndromeapp/Profile.dart';
+import 'package:downsyndromeapp/editprofile.dart';
 import 'package:downsyndromeapp/navbar.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
@@ -66,59 +67,74 @@ class _ProfileState extends State<Profile> {
           
             SizedBox(height: 25,),
 
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFFB19CD9),
-                      Color(0xFFE6E6FA),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  border: Border.all(color: Colors.purpleAccent, width: 2),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset(avatar,width: 75,),
-                    Text("$nickname",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),),
-                    Text("$syndrome",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black),),
-                    
-                    SizedBox(height: 10,),
-                
-                    Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(15),
-                        ),
-                      child: Column(
-                        children: [
-                          Text("Fitness Level",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 10,color: Colors.black),),
-                          Text("Level 3",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),),
-
-                          
+              Stack(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFFB19CD9),
+                          Color(0xFFE6E6FA),
                         ],
-                        
-                        
-                        
-                        
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                       ),
-                       
-                      ),
+                      border: Border.all(color: Colors.purpleAccent, width: 2),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(avatar,width: 75,),
+                        Text("$nickname",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),),
+                        Text("$syndrome",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black),),
 
-                  ],
+                        SizedBox(height: 10,),
+
+                        Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(15),
+                            ),
+                          child: Column(
+                            children: [
+                              Text("Fitness Level",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 10,color: Colors.black),),
+                              Text("Level 3",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),),
 
 
-                ),
+                            ],
 
 
 
+
+                          ),
+
+                          ),
+
+                      ],
+
+
+                    ),
+
+
+
+                  ),
+                  Positioned(
+                    top:0,
+                      right: 0,
+                      child: IconButton(
+                          onPressed: (){
+                              // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfile()));
+                          },
+                          icon: Icon(Icons.edit),
+                      )
+                  )
+                ],
               ),
 
 
@@ -350,19 +366,7 @@ SizedBox(height: 20,),
                     Text("Profile Settings",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),textAlign: TextAlign.center,),
                     SizedBox(height:10),
                     
-                    ElevatedButton(onPressed: (){},
-                        child:
-                        Text("Edit profile",textAlign:TextAlign.left,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black),),
 
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.redAccent.withOpacity(0.8),
-                        minimumSize: Size(double.infinity, 50),
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
-                    SizedBox(height: 10,),
 
                     ElevatedButton(onPressed: (){},
                       child:
