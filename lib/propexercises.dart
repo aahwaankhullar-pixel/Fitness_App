@@ -1,5 +1,6 @@
 import 'package:downsyndromeapp/PropExercises.dart';
 import 'package:downsyndromeapp/navbar.dart';
+import 'package:downsyndromeapp/softprops.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -112,9 +113,13 @@ class _PropExercisesState extends State<PropExercises> {
           const SizedBox(height: 20),
         
               GestureDetector(
-                onTap: (){
-        
+                onTap: ()async {
+                  print("pressed");
+                  // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SoftProps()));
+
                 },
+
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
