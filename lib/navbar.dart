@@ -4,6 +4,7 @@ import "dart:async";
 import "package:downsyndromeapp/PropExercises.dart";
 import "package:downsyndromeapp/StartPage.dart";
 import "package:downsyndromeapp/exercises.dart";
+import "package:downsyndromeapp/profile.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:google_nav_bar/google_nav_bar.dart";
@@ -29,7 +30,7 @@ class _NavBarState extends State<NavBar> {
     Exercises(),
     PropExercises(),
     Home(),
-    Home(),
+    Profile()
   ];
 
 

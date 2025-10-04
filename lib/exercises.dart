@@ -1,4 +1,5 @@
 import 'package:downsyndromeapp/Exercises.dart';
+import 'package:downsyndromeapp/bodypartexercise.dart';
 import 'package:downsyndromeapp/navbar.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
@@ -38,24 +39,31 @@ class _ExercisesState extends State<Exercises> {
               SizedBox(width: 10,),
               Column(
                 children: [
-                  EasyRichText("Exercise time, $nickname 💪 \nChoose your favourite activity, friend!",
-                    defaultStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),textAlign: TextAlign.left,
-                    patternList: [
-                      EasyRichTextPattern(
-                        targetString: 'Exercise time, $nickname',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ],
+              EasyRichText("Exercise time, $nickname 💪 \nChoose your favourite activity, friend!",
+                defaultStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),textAlign: TextAlign.left,
+                patternList: [
+                  EasyRichTextPattern(
+                    targetString: 'Exercise time, $nickname',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
+                ],
+              ),
+
                 ],
               ),
             ],
           ),
           SizedBox(height: 20,),
+
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.green.shade400,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFB2FDC9), Color(0xFF80DFFF)],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  border: Border.all(color:  Color(0xFF80DFFF), width: 2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -67,7 +75,7 @@ class _ExercisesState extends State<Exercises> {
                         Text(
                           "Your Progress",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -75,19 +83,19 @@ class _ExercisesState extends State<Exercises> {
                         SizedBox(height: 4),
                         Text(
                           "200 points earned\nKeep moving to earn more!",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
+                          style: TextStyle(color: Colors.black, fontSize: 14),
                         ),
                       ],
                     ),
                     const Icon(
                       Icons.directions_run,
-                      color: Colors.white,
+                      color: Colors.black,
                       size: 40,
                     ),
                   ],
                 ),
               ),
-        
+
               const SizedBox(height: 30),
               const Center(
                 child: Text(
@@ -97,10 +105,10 @@ class _ExercisesState extends State<Exercises> {
                 ),
               ),
               const SizedBox(height: 20),
-        
+
               GestureDetector(
                 onTap: (){
-        
+
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
@@ -132,13 +140,19 @@ class _ExercisesState extends State<Exercises> {
                       Icon(Icons.arrow_forward_ios),
                     ],
                   ),
+
+
                 ),
               ),
               const SizedBox(height: 15),
+
               // Body Parts Button
               GestureDetector(
-                onTap: (){
-        
+                onTap: () async {
+                  print("pressed");
+                  // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BodypartExerciseApp()));
+
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
@@ -173,10 +187,10 @@ class _ExercisesState extends State<Exercises> {
                 ),
               ),
               const SizedBox(height: 15),
-        
+
               GestureDetector(
                 onTap: (){
-        
+
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
@@ -211,7 +225,7 @@ class _ExercisesState extends State<Exercises> {
                 ),
               ),
               SizedBox(height: 20,),
-        
+
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -250,11 +264,18 @@ class _ExercisesState extends State<Exercises> {
                       ),
                     ],
                   ),
+
+
+
               ),
-            ],
+                ],
           ),
         ),
       ),
-    );
+        );
+
+
+
   }
-}
+
+  }
