@@ -27,6 +27,14 @@ class _EditProfileState extends State<EditProfile> {
     {"name": "Kitty", "asset": "assets/37-.png"},
     {"name": "Dog", "asset": "assets/38-.png"},
   ];
+  List<String> syndrome=[
+    "Down Syndrome",
+    "Autism Spectrum Disorder"
+    "Williams Syndrome"
+    "Noonan Syndrome"
+  ];
+
+
 
   @override
   Widget build(BuildContext context) {

@@ -104,11 +104,24 @@ class _ProfileState extends State<Profile> {
                             children: [
                               Text("Fitness Level",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 10,color: Colors.black),),
                               Text("Level 3",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),),
+
+
                             ],
+
+
+
+
                           ),
-                        ),
+
+                          ),
+
                       ],
+
+
                     ),
+
+
+
                   ),
                   Positioned(
                     top:0,
