@@ -35,44 +35,110 @@ class _SoftPropsState extends State<SoftProps> {
           children: [
             SizedBox(height: 15,),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.lightBlueAccent, width: 1),
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFF8AF8BA),
+                    Color(0xFF78C9F3),
+                    Color(0xFF4CBFF3),
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+              ),
 
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFB2FDC9), Color(0xFF80DFFF)],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
-          border: Border.all(color:  Color(0xFF80DFFF), width: 2),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                Text(
-                  "Soft Props",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+              child: Column(
+                children: [
+                  Text("🧸",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 25,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Soft and safe items for gentle exercises",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black, fontSize: 14),
-                ),
-              ],
+                  SizedBox(height: 5,),
+                  Text("Soft Props",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text("Safe and soft items for gentle exercises.",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 5,),
+                ],
+              ),
             ),
 
-          ],
-        ),
-      ),
+            SizedBox(height: 20,),
+
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.lightBlueAccent, width: 1),
+                borderRadius: BorderRadius.circular(20),
+               color: Colors.white
+              ),
+              child:
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.bed),
+                  SizedBox(width: 7,),
+
+
+                  Expanded(
+                  child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  child:
+                      Column(
+                        children: [
+                  Text("Pillow Power",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Text("3 exercises using pillows",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+],
+
+                  ),
+                  ),
+
+
+
+
+
+
+                  )
+
+
+
+                ],
+
+              ),
+            )
 
           ],
 
