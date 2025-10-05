@@ -37,16 +37,15 @@ class _SoftPropsState extends State<SoftProps> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.lightBlueAccent, width: 1),
+                border: Border.all(color: Colors.pinkAccent, width: 1),
                 borderRadius: BorderRadius.circular(20),
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xFF8AF8BA),
-                    Color(0xFF78C9F3),
-                    Color(0xFF4CBFF3),
+                    Color(0xFFF06292),
+                    Color(0xFF9575CD),
                   ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
               ),
 
@@ -84,66 +83,90 @@ class _SoftPropsState extends State<SoftProps> {
 
             SizedBox(height: 20,),
 
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.lightBlueAccent, width: 1),
-                borderRadius: BorderRadius.circular(20),
-               color: Colors.white
-              ),
-              child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.bed),
-                  SizedBox(width: 7,),
+        GestureDetector(
+          onTap: (){},
 
 
-                  Expanded(
-                  child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
-                  child:
-                      Column(
-                        children: [
-                  Text("Pillow Power",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                      Text("3 exercises using pillows",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-],
-
-                  ),
-                  ),
-
-
-
-
-
-
-                  )
-
-
-
+          child: Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFFF7C8D0),
+                  Color(0xFFE8F0D0),
+                  Color(0xFFFDE9C6),
+                  Color(0xFFC7E9E8),
                 ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Icon(Icons.bed, size: 28),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    child: Text(
+                      " Pillow Pillower\n3 Exercises using Pillows",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                ),
+                Icon(Icons.arrow_forward_ios),
+              ],
+            ),
+
+
+          ),
+        ),
+
+SizedBox(height: 20,),
+
+            GestureDetector(
+              onTap: (){},
+
+
+              child: Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFFFFF1C1), // pastel yellow
+                      Color(0xFFFFCCE5), // soft pink
+                      Color(0xFFD5C7FF), // lavender
+                      Color(0xFFC2F0FF), // light blue
+                      Color(0xFFC9FFE5), // mint green
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Icon(Icons.toys, size: 28),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          " Stuffed Toy Fun\n3 Exercises using Stuffed toys",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
+
 
               ),
-            )
+            ),
 
-          ],
-
-
-
+        ],
         ),
       )
 

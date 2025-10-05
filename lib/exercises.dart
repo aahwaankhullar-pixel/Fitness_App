@@ -256,7 +256,7 @@ class _ExercisesState extends State<Exercises> {
                             ),
                             SizedBox(height: 4),
                             Text(
-                              "• Start with warm-up exercises to prepare your muscles\n• Take breaks when you need them \n• Have fun and move at your own pace!\n • Don't forget to stay hydrated",
+                              "• Start with warm-up exercises to prepare your muscles\n• Take breaks when you need them \n• Have fun and move at your own pace!\n• Don't forget to stay hydrated",
                               style: TextStyle(color: Colors.black, fontSize: 14),
                             ),
                           ],
