@@ -23,12 +23,21 @@ class _ProfileState extends State<Profile> {
   Segment(value: 80, color: Colors.black,),
   Segment(value: 14, color: Colors.grey, ),
 ];
+  String nickname = "";
+  String avatar = "";
+  String syndrome = "";
+
+  @override
+  void initState() {
+    super.initState();
+    nickname = box.get("nickname");
+    avatar = box.get("avatar");
+    syndrome = box.get("syndrome");
+  }
 
   @override
   Widget build(BuildContext context) {
-    String nickname = box.get("nickname");
-    String avatar = box.get("avatar");
-    String syndrome = box.get("syndrome");
+
     final level_progressBar = PrimerProgressBar(
       segments: level_segments,
       showLegend: false,
@@ -51,14 +60,14 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
       backgroundColor: Colors.lightBlueAccent,
       title: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text("My Profile", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
           Text("Your fitness journey",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),)
-
       ],
       ),
+      centerTitle: true,
       automaticallyImplyLeading: false,
-
     ),
       body:
         SingleChildScrollView(
@@ -346,55 +355,26 @@ class _ProfileState extends State<Profile> {
                 ),
             SizedBox(height: 20,),
 
-                Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFF8B9AE0),
-                        // Ending color (right side) - a very pale off-white/mint
-                        Color(0xFFE9F5E3),
-                      ],
+
+                  ElevatedButton(onPressed: (){},
+                    child:
+
+                    Text("Logout",textAlign:TextAlign.left,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black),),
+
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlueAccent.withOpacity(0.8),
+                      minimumSize: Size(double.infinity, 50),
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
-                    border: Border.all(color: Color(0xFFE0FFFF), width: 2),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-
-                  child:
-                  Column(
-                    children: [
-                      Text("Profile Settings",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),textAlign: TextAlign.center,),
-                      SizedBox(height:10),
-
-
-
-                      ElevatedButton(onPressed: (){},
-                        child:
-
-                        Text("Logout",textAlign:TextAlign.left,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black),),
-
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent.withOpacity(0.8),
-                          minimumSize: Size(double.infinity, 50),
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                        ),
-                      )
-                    ],
                   ),
 
 
-                )
 
-
-
+                SizedBox(height: 20,),
 
               ],
-
 
 
 
