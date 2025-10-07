@@ -15,8 +15,6 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   final box = Hive.box("User");
 
-  TextEditingController nicknamecontroller = TextEditingController();
-
   final List<Map<String, String>> avatars = [
     {"name": "Penguin", "asset": "assets/31.png"},
     {"name": "Panda", "asset": "assets/32.png"},
@@ -34,13 +32,15 @@ class _EditProfileState extends State<EditProfile> {
     "Noonan Syndrome"
   ];
 
-
+  String selectedAvatar = "";
 
   @override
   Widget build(BuildContext context) {
     String nickname = box.get("nickname");
     String avatar = box.get("avatar");
     String syndrome = box.get("syndrome");
+
+    TextEditingController nicknamecontroller = TextEditingController(text: nickname);
 
     return Scaffold(
       appBar: AppBar(
@@ -71,7 +71,11 @@ class _EditProfileState extends State<EditProfile> {
                   children: [
                     for(dynamic avatar in avatars)
                       GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          setState(() {
+                            selectedAvatar = avatar["asset"];
+                          });
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -79,11 +83,12 @@ class _EditProfileState extends State<EditProfile> {
                             border: Border.all(),
                           ),
                           margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                          padding: EdgeInsets.all(2),
+                          // padding: EdgeInsets.all(),
                           child: CircleAvatar(
                             radius: 40,
                             child: Image.asset(
                               avatar["asset"],
+                              width: 100,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -116,6 +121,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
             ],
           ),
         )
