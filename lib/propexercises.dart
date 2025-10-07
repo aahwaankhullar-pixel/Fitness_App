@@ -1,4 +1,7 @@
 import 'package:downsyndromeapp/PropExercises.dart';
+import 'package:downsyndromeapp/ballgames.dart';
+import 'package:downsyndromeapp/chairexercises.dart';
+import 'package:downsyndromeapp/kitchenhelpers.dart';
 import 'package:downsyndromeapp/navbar.dart';
 import 'package:downsyndromeapp/softprops.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
@@ -158,9 +161,14 @@ class _PropExercisesState extends State<PropExercises> {
         
           // Body Parts Button
               GestureDetector(
-                onTap: (){
-        
+                onTap: ()async {
+                  print("pressed");
+                  // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BallGames()));
+
                 },
+        
+
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -198,8 +206,11 @@ class _PropExercisesState extends State<PropExercises> {
           const SizedBox(height: 15),
         
               GestureDetector(
-                onTap: (){
-        
+                onTap: ()async {
+                  print("pressed");
+                  // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>KitchenHelpers()));
+
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
@@ -238,8 +249,11 @@ class _PropExercisesState extends State<PropExercises> {
           SizedBox(height: 20,),
         
               GestureDetector(
-                onTap: (){
-        
+                onTap: ()async {
+                  print("pressed");
+                  // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ChairExercises()));
+
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),

@@ -35,49 +35,138 @@ class _SoftPropsState extends State<SoftProps> {
           children: [
             SizedBox(height: 15,),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.pinkAccent, width: 1),
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFFF06292),
+                    Color(0xFF9575CD),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
 
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFB2FDC9), Color(0xFF80DFFF)],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
-          border: Border.all(color:  Color(0xFF80DFFF), width: 2),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              child: Column(
+                children: [
+                  Text("🧸",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 25,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 5,),
+                  Text("Soft Props",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text("Safe and soft items for gentle exercises.",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 5,),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 20,),
+
+        GestureDetector(
+          onTap: (){},
+
+
+          child: Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFFF7C8D0),
+                  Color(0xFFE8F0D0),
+                  Color(0xFFFDE9C6),
+                  Color(0xFFC7E9E8),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text(
-                  "Soft Props",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                Icon(Icons.bed, size: 28),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    child: Text(
+                      " Pillow Pillower\n3 Exercises using Pillows",
+                      style: TextStyle(fontSize: 15),
+                    ),
                   ),
                 ),
-                SizedBox(height: 4),
-                Text(
-                  "Soft and safe items for gentle exercises",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black, fontSize: 14),
-                ),
+                Icon(Icons.arrow_forward_ios),
               ],
             ),
 
-          ],
+
+          ),
         ),
-      ),
 
-          ],
+SizedBox(height: 20,),
+
+            GestureDetector(
+              onTap: (){},
 
 
+              child: Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFFFFF1C1), // pastel yellow
+                      Color(0xFFFFCCE5), // soft pink
+                      Color(0xFFD5C7FF), // lavender
+                      Color(0xFFC2F0FF), // light blue
+                      Color(0xFFC9FFE5), // mint green
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Icon(Icons.toys, size: 28),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          " Stuffed Toy Fun\n3 Exercises using Stuffed toys",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
 
+
+              ),
+            ),
+
+        ],
         ),
       )
 
