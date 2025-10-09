@@ -230,6 +230,40 @@ class _ExercisesState extends State<Exercises> {
                 ),
               ),
               SizedBox(height: 20,),
+              GestureDetector(
+                onTap: (){},
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.cyanAccent,
+                        Colors.greenAccent
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    border: Border.all(color: Colors.amber, width: 2),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Icon(Icons.music_note, size: 28),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 12),
+                          child: Text(
+                            "Balance/Posture\n Exercises that improve balance, coordination, and posture control.",
+                            style: TextStyle(fontSize: 15),
+                          ),
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ),
+              ),
 
               Container(
                 padding: const EdgeInsets.all(16),
