@@ -96,7 +96,29 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                     Text("Make circles with your arms like a windmill!", style: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500),),
                     SizedBox(height: 20,),
                     Text("Follow my lead, $nickname", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.blue),),
-
+                    SizedBox(height: 10,),
+                    Text("Worth 5 points! ⭐", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.grey),),
+                    SizedBox(height: 20,),
+                    ElevatedButton(
+                      onPressed: () async {
+                        print("pressed");
+                      },
+                      child: Text(
+                        "Let's Go! 🚀",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepOrangeAccent.withOpacity(0.8),
+                        minimumSize: Size(double.infinity, 50),
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
                   ],
                 ),
               )
