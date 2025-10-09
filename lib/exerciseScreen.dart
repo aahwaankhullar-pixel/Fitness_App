@@ -42,6 +42,20 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
       ),
     );
 
+    List<Segment> sets_segment = [
+      Segment(value: 0, color: Colors.black,),
+      Segment(value: 2, color: Colors.grey, ),
+    ];
+
+    final sets_progressBar = PrimerProgressBar(
+      segments: sets_segment,
+      showLegend: false,
+      barStyle: SegmentedBarStyle(
+          gap: 1,
+          size: 9
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
@@ -91,7 +105,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                   children: [
                     Image.asset("assets/exercise_sample.gif"),
                     SizedBox(height: 20,),
-                    Text("Arm Circles", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),),
+                    Text("Arm Circles", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),),
                     SizedBox(height: 10,),
                     Text("Make circles with your arms like a windmill!", style: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500),),
                     SizedBox(height: 20,),
@@ -99,12 +113,16 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                     SizedBox(height: 10,),
                     Text("Worth 5 points! ⭐", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.grey),),
                     SizedBox(height: 20,),
+                    Text("0/2 Sets", style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: Colors.blue),),
+                    SizedBox(height: 10,),
+                    sets_progressBar,
+                    SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () async {
                         print("pressed");
                       },
                       child: Text(
-                        "Let's Go! 🚀",
+                        "I Did It!",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
