@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:downsyndromeapp/exercises_db.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -5,8 +8,9 @@ import 'package:primer_progress_bar/primer_progress_bar.dart';
 
 class ExerciseScreen extends StatefulWidget {
   final String exerciseType;
+  final String exerciseCategory;
 
-  const ExerciseScreen({Key? key, required this.exerciseType}) : super(key: key);
+  const ExerciseScreen({Key? key, required this.exerciseType, required this.exerciseCategory}) : super(key: key);
 
   @override
   State<ExerciseScreen> createState() => _ExerciseScreenState();
@@ -18,14 +22,21 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
   final box = Hive.box("User");
 
   String nickname = "";
+  List<Map<String, dynamic>> all_exercises = [];
+  List<Map<String, dynamic>> exercises = [];
+  final random = Random();
 
   @override
   void initState() {
     super.initState();
     nickname = box.get("nickname");
+    all_exercises = bodyParts[widget.exerciseType]!;
+    print(all_exercises);
+    all_exercises.shuffle(random);
+    exercises = all_exercises.take(3).toList();
+    print(exercises);
   }
 
-  
   @override
   Widget build(BuildContext context) {
     List<Segment> exercise_segment = [

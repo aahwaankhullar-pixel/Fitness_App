@@ -1,4 +1,4 @@
-final Map<String, List<Map<String, dynamic>>> downSyndromeExercises = {
+final Map<String, List<Map<String, dynamic>>> bodyParts = {
   "Arms": [
     {
       "name": "Wall Push-ups",
