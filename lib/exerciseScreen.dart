@@ -32,7 +32,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
   void initState() {
     super.initState();
     nickname = box.get("nickname");
-    all_exercises = bodyParts[widget.exerciseType]!;
+    all_exercises = exerciseDB[widget.exerciseCategory][widget.exerciseType]!;
     print(all_exercises);
     all_exercises.shuffle(random);
     exercises = all_exercises.take(3).toList();
