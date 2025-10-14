@@ -4,6 +4,8 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import 'exerciseScreen.dart';
+
 class BallGames extends StatefulWidget {
   const BallGames({super.key});
 
@@ -84,7 +86,9 @@ class _BallGamesState extends State<BallGames> {
               SizedBox(height: 20,),
 
               GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Large Ball", exerciseCategory: "ballexercises")));
+                },
 
 
                 child: Container(
@@ -126,7 +130,9 @@ class _BallGamesState extends State<BallGames> {
               SizedBox(height: 20,),
 
               GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Tennis Ball", exerciseCategory: "ballexercises")));
+                },
 
 
                 child: Container(
