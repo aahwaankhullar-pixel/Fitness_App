@@ -177,7 +177,7 @@ class _EditProfileState extends State<EditProfile> {
                     return null;
                   },
                 ),
-
+SizedBox(height: 20,),
                 ElevatedButton(
                   onPressed: () async {
                     print("pressed");

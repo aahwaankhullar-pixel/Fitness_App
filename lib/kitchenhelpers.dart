@@ -110,7 +110,7 @@ class _KitchenHelpersState extends State<KitchenHelpers> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12),
                           child: Text(
-                            "Water Bottle Weights\n3 Exercises using Water bottles. ",
+                            "Water Bottle Weights\n3 Exercises using bottles",
                             style: TextStyle(fontSize: 15),
                           ),
                         ),

@@ -4,14 +4,14 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
-class SoftProps extends StatefulWidget {
-  const SoftProps({super.key});
+class GeneralProps extends StatefulWidget {
+  const GeneralProps({super.key});
 
   @override
-  State<SoftProps> createState() => _SoftPropsState();
+  State<GeneralProps> createState() => _GeneralPropsState();
 }
 
-class _SoftPropsState extends State<SoftProps> {
+class _GeneralPropsState extends State<GeneralProps> {
   final box = Hive.box("User");
 
   @override
@@ -165,8 +165,51 @@ SizedBox(height: 20,),
 
               ),
             ),
+            SizedBox(height: 20,),
 
-        ],
+
+            GestureDetector(
+              onTap: (){},
+
+
+              child: Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFFF7C8D0),
+                      Color(0xFFE8F0D0),
+                      Color(0xFFFDE9C6),
+                      Color(0xFFC7E9E8),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Icon(Icons.fitness_center, size: 28),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          " Dumbbell\n3 Exercises using Dumbbells",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
+
+
+              ),
+            ),
+
+
+          ],
         ),
       )
 

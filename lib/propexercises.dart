@@ -3,7 +3,7 @@ import 'package:downsyndromeapp/ballgames.dart';
 import 'package:downsyndromeapp/chairexercises.dart';
 import 'package:downsyndromeapp/kitchenhelpers.dart';
 import 'package:downsyndromeapp/navbar.dart';
-import 'package:downsyndromeapp/softprops.dart';
+import 'package:downsyndromeapp/generalprops.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -119,7 +119,7 @@ class _PropExercisesState extends State<PropExercises> {
                 onTap: ()async {
                   print("pressed");
                   // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SoftProps()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>GeneralProps()));
 
                 },
 
@@ -145,7 +145,7 @@ class _PropExercisesState extends State<PropExercises> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12),
                           child: Text(
-                            "Soft Props\nSoft and safe items for gentle exercises.",
+                            "General Props\nGeneral and safe items for gentle exercises.",
                             style: TextStyle(fontSize: 15),
                           ),
                         ),

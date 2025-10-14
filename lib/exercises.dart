@@ -243,18 +243,18 @@ class _ExercisesState extends State<Exercises> {
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
-                    border: Border.all(color: Colors.amber, width: 2),
+                    border: Border.all(color: Colors.greenAccent, width: 2),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
-                      Icon(Icons.music_note, size: 28),
+                      Icon(Icons.man, size: 28),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12),
                           child: Text(
-                            "Balance/Posture\n Exercises that improve balance, coordination, and posture control.",
+                            "Balance/Posture\nExercises that improve balance, coordination, and posture control.",
                             style: TextStyle(fontSize: 15),
                           ),
                         ),
@@ -264,6 +264,7 @@ class _ExercisesState extends State<Exercises> {
                   ),
                 ),
               ),
+              SizedBox(height:20),
 
               Container(
                 padding: const EdgeInsets.all(16),

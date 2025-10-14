@@ -110,7 +110,7 @@ class _BallGamesState extends State<BallGames> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12),
                           child: Text(
-                            " Beach Ball Bounce\n3 Exercises using Beach ball/Balloon",
+                            " Beach Ball Bounce\n3 Exercises using Beach ball/Large-sized ball",
                             style: TextStyle(fontSize: 15),
                           ),
                         ),
