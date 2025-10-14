@@ -1124,9 +1124,71 @@ final List<Map<String, dynamic>> danceExercises = [
     "gif": "",
   },
 ];
-
-
-
-
-
-
+final List<Map<String, dynamic>> warmupLightExercises = [
+  {
+    "name": "Neck Rotations",
+    "instructions": "Slowly rotate your head in a circular motion, then switch directions after a few turns.",
+    "safety": "Move gently; don’t tilt too far back.",
+    "gif": "",
+  },
+  {
+    "name": "Shoulder Rolls",
+    "instructions": "Roll your shoulders forward in a circular motion, then backward to loosen tension.",
+    "safety": "Keep movements smooth and relaxed.",
+    "gif": "",
+  },
+  {
+    "name": "Arm Circles",
+    "instructions": "Extend arms to the sides and make small circles, gradually making them larger.",
+    "safety": "Avoid fast or jerky movements.",
+    "gif": "",
+  },
+  {
+    "name": "Torso Twists",
+    "instructions": "Stand tall and slowly twist your upper body from side to side.",
+    "safety": "Move gently; avoid over-rotating.",
+    "gif": "",
+  },
+  {
+    "name": "Ankle Rotations",
+    "instructions": "Lift one foot slightly and rotate the ankle slowly in circles, then switch feet.",
+    "safety": "Hold a chair for balance if needed.",
+    "gif": "",
+  },
+  {
+    "name": "Knee Lifts",
+    "instructions": "Lift one knee at a time toward your chest in a marching motion while standing tall.",
+    "safety": "Use support if balance feels unstable.",
+    "gif": "",
+  },
+  {
+    "name": "Side Steps",
+    "instructions": "Step to one side, then bring your other foot to meet it. Repeat slowly in both directions.",
+    "safety": "Step gently; keep knees slightly bent.",
+    "gif": "",
+  },
+  {
+    "name": "Wrist Rotations",
+    "instructions": "Extend arms forward and slowly rotate wrists in both directions.",
+    "safety": "Keep wrists relaxed and avoid locking joints.",
+    "gif": "",
+  },
+  {
+    "name": "Deep Breathing with Arm Raise",
+    "instructions": "Inhale deeply while raising arms overhead, then exhale slowly as you lower them.",
+    "safety": "Move slowly and breathe steadily.",
+    "gif": "",
+  },
+  {
+    "name": "Hip Circles",
+    "instructions": "Place hands on hips and make gentle circular movements with your hips in both directions.",
+    "safety": "Keep movements slow and controlled.",
+    "gif": "",
+  },
+  {
+    "name": "Heel Raises",
+    "instructions": "Stand tall and lift your heels off the ground, balancing on your toes, then lower slowly.",
+    "safety": "Hold a chair for support if needed.",
+    "gif": "",
+  },
+];
