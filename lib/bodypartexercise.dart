@@ -76,7 +76,7 @@ class BodypartExerciseHomePage extends StatelessWidget {
               // Arms
               GestureDetector(
                 onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Arm Exercises")));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Arms", exerciseCategory: "bodyParts")));
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
