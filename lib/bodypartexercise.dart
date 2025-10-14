@@ -1,9 +1,11 @@
 import 'package:downsyndromeapp/Exercises.dart';
 import 'package:downsyndromeapp/bodypartexercise.dart';
+import 'package:downsyndromeapp/exerciseScreen.dart';
 import 'package:downsyndromeapp/navbar.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:primer_progress_bar/primer_progress_bar.dart';
 
 void main() {
   runApp(BodypartExerciseApp());
@@ -73,7 +75,9 @@ class BodypartExerciseHomePage extends StatelessWidget {
 
               // Arms
               GestureDetector(
-                onTap: () => onBodyPartTap("Arms"),
+                onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Arm Exercises")));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
