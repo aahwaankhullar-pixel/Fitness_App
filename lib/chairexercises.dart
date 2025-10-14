@@ -84,9 +84,9 @@ class _ChairExercisesState extends State<ChairExercises> {
               SizedBox(height: 20,),
 
               GestureDetector(
-                onTap: (){},
+                onTap: (){
 
-
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(

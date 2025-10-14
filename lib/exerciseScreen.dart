@@ -19,6 +19,8 @@ class ExerciseScreen extends StatefulWidget {
 class _ExerciseScreenState extends State<ExerciseScreen> {
   
   int current_no = 1;
+  int current_exercise_index = 0;
+  int current_set = 0;
   final box = Hive.box("User");
 
   String nickname = "";
@@ -54,8 +56,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
     );
 
     List<Segment> sets_segment = [
-      Segment(value: 0, color: Colors.black,),
-      Segment(value: 2, color: Colors.grey, ),
+      Segment(value: current_set, color: Colors.black,),
+      Segment(value: 2-current_set, color: Colors.grey, ),
     ];
 
     final sets_progressBar = PrimerProgressBar(
@@ -66,6 +68,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
           size: 9
       ),
     );
+
+    // Get current exercise data
+    Map<String, dynamic> currentExercise = exercises.isNotEmpty ? exercises[current_exercise_index] : {};
 
     return Scaffold(
       appBar: AppBar(
@@ -114,26 +119,38 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                 ),
                 child: Column(
                   children: [
-                    Image.asset("assets/exercise_sample.gif"),
+                    Image.asset(currentExercise['image'] ?? "assets/exercise_sample.gif"),
                     SizedBox(height: 20,),
-                    Text("Arm Circles", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),),
+                    Text(currentExercise['name'] ?? "Exercise", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),),
                     SizedBox(height: 10,),
-                    Text("Make circles with your arms like a windmill!", style: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500),),
+                    Text(currentExercise['instructions'] ?? "Complete this exercise!", style: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
                     SizedBox(height: 20,),
                     Text("Follow my lead, $nickname", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.blue),),
                     SizedBox(height: 10,),
-                    Text("Worth 5 points! ⭐", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.grey),),
+                    Text("Worth ${currentExercise['points'] ?? 5} points! ⭐", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.grey),),
                     SizedBox(height: 20,),
-                    Text("0/2 Sets", style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: Colors.blue),),
+                    Text("$current_set/2 Sets", style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: Colors.blue),),
                     SizedBox(height: 10,),
+                    EasyRichText(
+                      "Quick Heads-Up: ${currentExercise['safety'] ?? ""}",
+                      defaultStyle: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500), textAlign: TextAlign.center,
+                      patternList: [
+                        EasyRichTextPattern(
+                          targetString: 'Quick Heads-Up:',
+                          style: TextStyle(fontWeight: FontWeight.w900),
+                        ),
+                      ],
+                    ),
+                    // Text("Quick Heads-Up ${currentExercise['safety'] ?? ""}", style: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
+                    SizedBox(height: 20,),
                     sets_progressBar,
                     SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () async {
-                        print("pressed");
+                        _completeSet();
                       },
                       child: Text(
-                        "I Did It!",
+                        current_set < 2 ? "I Did It!" : "Complete Exercise!",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
@@ -155,6 +172,58 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
           ),
         ),
       )
+    );
+  }
+
+  void _completeSet() {
+    setState(() {
+      if (current_set < 2) {
+        // Complete a set
+        current_set++;
+      } else {
+        // Complete the current exercise and move to next
+        _moveToNextExercise();
+      }
+    });
+  }
+
+  void _moveToNextExercise() {
+    if (current_exercise_index < exercises.length - 1) {
+      // Move to next exercise
+      setState(() {
+        current_exercise_index++;
+        current_no++;
+        current_set = 0; // Reset sets for new exercise
+      });
+    } else {
+      // All exercises completed
+      _showCompletionDialog();
+    }
+  }
+
+  void _showCompletionDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("🎉 Congratulations!"),
+          content: Text("You've completed all exercises! Great job, $nickname!"),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close dialog
+                Navigator.of(context).pop(); // Go back to previous screen
+              },
+              child: Text("Awesome!"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepOrangeAccent,
+                foregroundColor: Colors.white,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
   

@@ -25,6 +25,7 @@ class BodypartExerciseHomePage extends StatelessWidget {
   final box = Hive.box("User");
   void onBodyPartTap(String name) {
     print("Tapped on $name");
+
   }
 
   @override
@@ -76,7 +77,7 @@ class BodypartExerciseHomePage extends StatelessWidget {
               // Arms
               GestureDetector(
                 onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Arms", exerciseCategory: "bodyParts")));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Arms", exerciseCategory: "bodyParts")));
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
@@ -113,7 +114,9 @@ class BodypartExerciseHomePage extends StatelessWidget {
 
               // Legs
               GestureDetector(
-                onTap: () => onBodyPartTap("Legs"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Legs", exerciseCategory: "bodyParts")));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -149,7 +152,9 @@ class BodypartExerciseHomePage extends StatelessWidget {
 
               // Core
               GestureDetector(
-                onTap: () => onBodyPartTap("Core"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Core", exerciseCategory: "bodyParts")));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -184,7 +189,9 @@ class BodypartExerciseHomePage extends StatelessWidget {
 
               // Hands
               GestureDetector(
-                onTap: () => onBodyPartTap("Hands"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Hands", exerciseCategory: "bodyParts")));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -219,7 +226,9 @@ class BodypartExerciseHomePage extends StatelessWidget {
 
               // Neck
               GestureDetector(
-                onTap: () => onBodyPartTap("Neck"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Neck", exerciseCategory: "bodyParts")));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -254,7 +263,9 @@ class BodypartExerciseHomePage extends StatelessWidget {
 
               // Back
               GestureDetector(
-                onTap: () => onBodyPartTap("Back"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Back", exerciseCategory: "bodyParts")));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
