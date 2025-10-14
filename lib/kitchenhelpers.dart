@@ -4,6 +4,8 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import 'exerciseScreen.dart';
+
 class KitchenHelpers extends StatefulWidget {
   const KitchenHelpers({super.key});
 
@@ -84,7 +86,9 @@ class _KitchenHelpersState extends State<KitchenHelpers> {
               SizedBox(height: 20,),
 
               GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Water Bottle", exerciseCategory: "kitchenhelpers")));
+                },
 
 
                 child: Container(
@@ -126,7 +130,9 @@ class _KitchenHelpersState extends State<KitchenHelpers> {
               SizedBox(height: 20,),
 
               GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Towel", exerciseCategory: "kitchenhelpers")));
+                },
 
 
                 child: Container(

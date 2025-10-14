@@ -4,6 +4,8 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import 'exerciseScreen.dart';
+
 class ChairExercises extends StatefulWidget {
   const ChairExercises({super.key});
 
@@ -85,7 +87,7 @@ class _ChairExercisesState extends State<ChairExercises> {
 
               GestureDetector(
                 onTap: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Chair Support", exerciseCategory: "Chairexercises")));
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),

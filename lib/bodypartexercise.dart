@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:primer_progress_bar/primer_progress_bar.dart';
 
-void main() {
-  runApp(BodypartExerciseApp());
-}
+
 
 class BodypartExerciseApp extends StatelessWidget {
   @override
