@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:downsyndromeapp/User.dart';
 import 'package:downsyndromeapp/avatarpage.dart';
 import 'package:downsyndromeapp/signup.dart';
@@ -5,6 +7,8 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
+
+import 'achievements_db.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -15,6 +19,12 @@ class StartPage extends StatefulWidget {
 
 class _StartPageState extends State<StartPage> {
   final box=Hive.box("User");
+
+  List<Map<String, dynamic>> weekly_challenges= [];
+
+  Map<String, dynamic> today_challenge= {};
+  List<Map<String, dynamic>> bonus_challenges= [];
+  final random = Random();
 
   TextEditingController nicknamecontroller = TextEditingController();
 
@@ -104,6 +114,24 @@ class _StartPageState extends State<StartPage> {
                     print("pressed");
                     // final data=User(nickname: nicknamecontroller.text, avatar: avatar, syndrome: syndrome)
                   await box.put("nickname", nicknamecontroller.text);
+                  await box.put("avatar", "assets/31.png");
+                  await box.put("syndrome", "generalsyndrome");
+
+                  challengeMap.shuffle(random);
+                  weekly_challenges = challengeMap.take(5).toList();
+                  print(weekly_challenges);
+
+                  todaysGoals.shuffle(random);
+                  today_challenge = todaysGoals[0];
+                  print(today_challenge);
+
+                  bonus_challenges = challengeMap.take(3).toList();
+                  print(bonus_challenges);
+
+                  await box.put("weekly_challenges", weekly_challenges);
+                  await box.put("todays_challenge", today_challenge);
+                  await box.put("bonus_challenge", bonus_challenges);
+
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>AvatarPage()));
                   },
                   child: Text(
@@ -122,7 +150,6 @@ class _StartPageState extends State<StartPage> {
                         borderRadius: BorderRadius.circular(10)),
                   ),
                 ),
-          
               ],
             ),
           ),

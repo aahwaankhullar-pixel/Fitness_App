@@ -939,266 +939,272 @@ final Map<String, dynamic> exerciseDB = {
     ],
   },
 
-  "danceExercises": [
-    // WESTERN LINE DANCE
-    {
-      "name": "Step-Touch Groove",
-      "instructions": "Step side to side to the beat, adding a gentle arm swing with each move.",
-      "safety": "Keep knees soft; avoid sharp turns.",
-      "gif": "",
-    },
-    {
-      "name": "Grapevine Step",
-      "instructions": "Step to the side, cross one foot behind, step again, and tap — repeat both sides.",
-      "safety": "Move at a slow pace to avoid tripping.",
-      "gif": "",
-    },
-    {
-      "name": "Heel-Toe Rhythm",
-      "instructions": "Tap one heel forward, then your toe back, switching sides with the beat.",
-      "safety": "Maintain balance; don’t stomp too hard.",
-      "gif": "",
-    },
-    {
-      "name": "Kick Ball Change",
-      "instructions": "Kick one foot forward lightly, step back on it, then shift weight to the other foot.",
-      "safety": "Keep kicks gentle and controlled.",
-      "gif": "",
-    },
-    {
-      "name": "Slide and Clap Combo",
-      "instructions": "Slide your feet to one side and clap overhead, then slide the other way.",
-      "safety": "Ensure enough space for side movement.",
-      "gif": "",
-    },
+  "danceexercises": {
+    "Western Line Dance": [
+      {
+        "name": "Step-Touch Groove",
+        "instructions": "Step side to side to the beat, adding a gentle arm swing with each move.",
+        "safety": "Keep knees soft; avoid sharp turns.",
+        "gif": "",
+      },
+      {
+        "name": "Grapevine Step",
+        "instructions": "Step to the side, cross one foot behind, step again, and tap — repeat both sides.",
+        "safety": "Move at a slow pace to avoid tripping.",
+        "gif": "",
+      },
+      {
+        "name": "Heel-Toe Rhythm",
+        "instructions": "Tap one heel forward, then your toe back, switching sides with the beat.",
+        "safety": "Maintain balance; don’t stomp too hard.",
+        "gif": "",
+      },
+      {
+        "name": "Kick Ball Change",
+        "instructions": "Kick one foot forward lightly, step back on it, then shift weight to the other foot.",
+        "safety": "Keep kicks gentle and controlled.",
+        "gif": "",
+      },
+      {
+        "name": "Slide and Clap Combo",
+        "instructions": "Slide your feet to one side and clap overhead, then slide the other way.",
+        "safety": "Ensure enough space for side movement.",
+        "gif": "",
+      },
+    ],
 
-    // EASY HIP-HOP
-    {
-      "name": "Hip-Hop Bounce",
-      "instructions": "Bend knees slightly and bounce to the rhythm while moving shoulders side to side.",
-      "safety": "Keep movement soft on knees; stay relaxed.",
-      "gif": "",
-    },
-    {
-      "name": "Arm Wave Move",
-      "instructions": "Wave your arms from one side to the other smoothly while grooving your body slightly.",
-      "safety": "Move slowly; don’t overextend elbows.",
-      "gif": "",
-    },
-    {
-      "name": "Step and Clap Groove",
-      "instructions": "Take one step forward, clap, then step back and repeat with rhythm.",
-      "safety": "Keep floor clear to avoid slipping.",
-      "gif": "",
-    },
-    {
-      "name": "Shoulder Pop",
-      "instructions": "Pop your shoulders up and down to the beat, adding small body movements.",
-      "safety": "Keep shoulders relaxed; avoid jerks.",
-      "gif": "",
-    },
-    {
-      "name": "Slide and Twist",
-      "instructions": "Slide your feet to one side while twisting your torso slightly, then switch sides.",
-      "safety": "Keep feet grounded; avoid over-twisting.",
-      "gif": "",
-    },
 
-    // ZUMBA FUN
-    {
-      "name": "Salsa Step",
-      "instructions": "Step forward and back with alternating feet, swinging your hips gently to the music.",
-      "safety": "Don’t twist knees; use small steps.",
-      "gif": "",
-    },
-    {
-      "name": "Side Swing Twist",
-      "instructions": "Step side to side while twisting your hips and shoulders with energy.",
-      "safety": "Stay on the balls of your feet to avoid strain.",
-      "gif": "",
-    },
-    {
-      "name": "Bollywood Zumba Mix",
-      "instructions": "Move hands in circular Bollywood style while stepping side to side with music beats.",
-      "safety": "Keep movements light and playful.",
-      "gif": "",
-    },
-    {
-      "name": "Cha-Cha Slide",
-      "instructions": "Take quick side steps with small hip movements and arm sways.",
-      "safety": "Stay light on your feet.",
-      "gif": "",
-    },
-    {
-      "name": "Merengue March",
-      "instructions": "March in place with high knees while swinging arms to Latin music beats.",
-      "safety": "Avoid hard stomping; keep rhythm steady.",
-      "gif": "",
-    },
+    "Easy Hip Hop": [
+      {
+        "name": "Hip-Hop Bounce",
+        "instructions": "Bend knees slightly and bounce to the rhythm while moving shoulders side to side.",
+        "safety": "Keep movement soft on knees; stay relaxed.",
+        "gif": "",
+      },
+      {
+        "name": "Arm Wave Move",
+        "instructions": "Wave your arms from one side to the other smoothly while grooving your body slightly.",
+        "safety": "Move slowly; don’t overextend elbows.",
+        "gif": "",
+      },
+      {
+        "name": "Step and Clap Groove",
+        "instructions": "Take one step forward, clap, then step back and repeat with rhythm.",
+        "safety": "Keep floor clear to avoid slipping.",
+        "gif": "",
+      },
+      {
+        "name": "Shoulder Pop",
+        "instructions": "Pop your shoulders up and down to the beat, adding small body movements.",
+        "safety": "Keep shoulders relaxed; avoid jerks.",
+        "gif": "",
+      },
+      {
+        "name": "Slide and Twist",
+        "instructions": "Slide your feet to one side while twisting your torso slightly, then switch sides.",
+        "safety": "Keep feet grounded; avoid over-twisting.",
+        "gif": "",
+      },
+    ],
 
-    // GENTLE BALLET
-    {
-      "name": "Ballet Arm Flow",
-      "instructions": "Lift arms gracefully above your head and open them out to the sides in rhythm.",
-      "safety": "Keep shoulders relaxed and posture upright.",
-      "gif": "",
-    },
-    {
-      "name": "Plie Stretch",
-      "instructions": "Stand with feet apart, toes out, and bend knees slightly while keeping your back straight.",
-      "safety": "Move slowly; don’t bend knees too deep.",
-      "gif": "",
-    },
-    {
-      "name": "Ballet Point and Turn",
-      "instructions": "Point one foot forward and turn gently to the opposite side with grace.",
-      "safety": "Turn gently to maintain balance.",
-      "gif": "",
-    },
-    {
-      "name": "Arabesque Reach",
-      "instructions": "Extend one leg backward and arms forward while balancing gently.",
-      "safety": "Hold a chair if needed for support.",
-      "gif": "",
-    },
-    {
-      "name": "Curtsey Flow",
-      "instructions": "Step one foot back diagonally and bend knees slightly in a curtsey motion.",
-      "safety": "Move gently; avoid deep bends.",
-      "gif": "",
-    },
+    "Zumba Fun": [
+      {
+        "name": "Salsa Step",
+        "instructions": "Step forward and back with alternating feet, swinging your hips gently to the music.",
+        "safety": "Don’t twist knees; use small steps.",
+        "gif": "",
+      },
+      {
+        "name": "Side Swing Twist",
+        "instructions": "Step side to side while twisting your hips and shoulders with energy.",
+        "safety": "Stay on the balls of your feet to avoid strain.",
+        "gif": "",
+      },
+      {
+        "name": "Bollywood Zumba Mix",
+        "instructions": "Move hands in circular Bollywood style while stepping side to side with music beats.",
+        "safety": "Keep movements light and playful.",
+        "gif": "",
+      },
+      {
+        "name": "Cha-Cha Slide",
+        "instructions": "Take quick side steps with small hip movements and arm sways.",
+        "safety": "Stay light on your feet.",
+        "gif": "",
+      },
+      {
+        "name": "Merengue March",
+        "instructions": "March in place with high knees while swinging arms to Latin music beats.",
+        "safety": "Avoid hard stomping; keep rhythm steady.",
+        "gif": "",
+      },
+    ],
+    "Gentle Ballet": [
+      {
+        "name": "Ballet Arm Flow",
+        "instructions": "Lift arms gracefully above your head and open them out to the sides in rhythm.",
+        "safety": "Keep shoulders relaxed and posture upright.",
+        "gif": "",
+      },
+      {
+        "name": "Plie Stretch",
+        "instructions": "Stand with feet apart, toes out, and bend knees slightly while keeping your back straight.",
+        "safety": "Move slowly; don’t bend knees too deep.",
+        "gif": "",
+      },
+      {
+        "name": "Ballet Point and Turn",
+        "instructions": "Point one foot forward and turn gently to the opposite side with grace.",
+        "safety": "Turn gently to maintain balance.",
+        "gif": "",
+      },
+      {
+        "name": "Arabesque Reach",
+        "instructions": "Extend one leg backward and arms forward while balancing gently.",
+        "safety": "Hold a chair if needed for support.",
+        "gif": "",
+      },
+      {
+        "name": "Curtsey Flow",
+        "instructions": "Step one foot back diagonally and bend knees slightly in a curtsey motion.",
+        "safety": "Move gently; avoid deep bends.",
+        "gif": "",
+      },
+    ],
 
-    // FOLK FUN
-    {
-      "name": "Bhangra Bounce",
-      "instructions": "Lift arms up in a ‘V’ shape and bounce your shoulders and knees like in Bhangra style.",
-      "safety": "Stay light on feet; avoid jerky jumps.",
-      "gif": "",
-    },
-    {
-      "name": "Garba Circle Step",
-      "instructions": "Move in a small circle with side steps, clapping your hands in rhythm.",
-      "safety": "Ensure space around to move safely.",
-      "gif": "",
-    },
-    {
-      "name": "Ghoomar Spin",
-      "instructions": "Hold your arms out and do slow, graceful spins while smiling and maintaining rhythm.",
-      "safety": "Spin slowly to avoid dizziness.",
-      "gif": "",
-    },
-    {
-      "name": "Lavani Clap Rhythm",
-      "instructions": "Clap hands high and low in rhythm while stepping side to side in traditional Lavani beats.",
-      "safety": "Avoid high jumps; focus on rhythm.",
-      "gif": "",
-    },
-    {
-      "name": "Koli Fisher Step",
-      "instructions": "Mimic rowing a boat while stepping side to side like in Marathi folk dances.",
-      "safety": "Keep steps wide and controlled.",
-      "gif": "",
-    },
-
-    // YOGA FLOW
-    {
-      "name": "Sun Salutation Dance",
-      "instructions": "Flow through gentle yoga poses like reaching up, folding down, and stepping back slowly.",
-      "safety": "Move slowly with breath; avoid strain.",
-      "gif": "",
-    },
-    {
-      "name": "Tree Pose Sway",
-      "instructions": "Stand on one foot, place the other on your ankle, and sway gently like a tree in the wind.",
-      "safety": "Hold a wall for support if needed.",
-      "gif": "",
-    },
-    {
-      "name": "Warrior Groove",
-      "instructions": "Move into a warrior pose and add gentle rhythmic arm movements to soft background beats.",
-      "safety": "Keep knees above ankles; move with control.",
-      "gif": "",
-    },
-    {
-      "name": "Cat-Cow Flow",
-      "instructions": "On hands and knees, alternate between arching and rounding your back in sync with breathing.",
-      "safety": "Move gently; avoid neck strain.",
-      "gif": "",
-    },
-    {
-      "name": "Seated Twist Rhythm",
-      "instructions": "Sit cross-legged and twist gently from side to side, following calm music rhythm.",
-      "safety": "Twist gently; avoid over-rotation.",
-      "gif": "",
-    },
-  ],
-
-  "warmupLightExercises": [
-    {
-      "name": "Neck Rotations",
-      "instructions": "Slowly rotate your head in a circular motion, then switch directions after a few turns.",
-      "safety": "Move gently; don’t tilt too far back.",
-      "gif": "",
-    },
-    {
-      "name": "Shoulder Rolls",
-      "instructions": "Roll your shoulders forward in a circular motion, then backward to loosen tension.",
-      "safety": "Keep movements smooth and relaxed.",
-      "gif": "",
-    },
-    {
-      "name": "Arm Circles",
-      "instructions": "Extend arms to the sides and make small circles, gradually making them larger.",
-      "safety": "Avoid fast or jerky movements.",
-      "gif": "",
-    },
-    {
-      "name": "Torso Twists",
-      "instructions": "Stand tall and slowly twist your upper body from side to side.",
-      "safety": "Move gently; avoid over-rotating.",
-      "gif": "",
-    },
-    {
-      "name": "Ankle Rotations",
-      "instructions": "Lift one foot slightly and rotate the ankle slowly in circles, then switch feet.",
-      "safety": "Hold a chair for balance if needed.",
-      "gif": "",
-    },
-    {
-      "name": "Knee Lifts",
-      "instructions": "Lift one knee at a time toward your chest in a marching motion while standing tall.",
-      "safety": "Use support if balance feels unstable.",
-      "gif": "",
-    },
-    {
-      "name": "Side Steps",
-      "instructions": "Step to one side, then bring your other foot to meet it. Repeat slowly in both directions.",
-      "safety": "Step gently; keep knees slightly bent.",
-      "gif": "",
-    },
-    {
-      "name": "Wrist Rotations",
-      "instructions": "Extend arms forward and slowly rotate wrists in both directions.",
-      "safety": "Keep wrists relaxed and avoid locking joints.",
-      "gif": "",
-    },
-    {
-      "name": "Deep Breathing with Arm Raise",
-      "instructions": "Inhale deeply while raising arms overhead, then exhale slowly as you lower them.",
-      "safety": "Move slowly and breathe steadily.",
-      "gif": "",
-    },
-    {
-      "name": "Hip Circles",
-      "instructions": "Place hands on hips and make gentle circular movements with your hips in both directions.",
-      "safety": "Keep movements slow and controlled.",
-      "gif": "",
-    },
-    {
-      "name": "Heel Raises",
-      "instructions": "Stand tall and lift your heels off the ground, balancing on your toes, then lower slowly.",
-      "safety": "Hold a chair for support if needed.",
-      "gif": "",
-    },
-  ],
+    "Folk Fun": [
+      {
+        "name": "Bhangra Bounce",
+        "instructions": "Lift arms up in a ‘V’ shape and bounce your shoulders and knees like in Bhangra style.",
+        "safety": "Stay light on feet; avoid jerky jumps.",
+        "gif": "",
+      },
+      {
+        "name": "Garba Circle Step",
+        "instructions": "Move in a small circle with side steps, clapping your hands in rhythm.",
+        "safety": "Ensure space around to move safely.",
+        "gif": "",
+      },
+      {
+        "name": "Ghoomar Spin",
+        "instructions": "Hold your arms out and do slow, graceful spins while smiling and maintaining rhythm.",
+        "safety": "Spin slowly to avoid dizziness.",
+        "gif": "",
+      },
+      {
+        "name": "Lavani Clap Rhythm",
+        "instructions": "Clap hands high and low in rhythm while stepping side to side in traditional Lavani beats.",
+        "safety": "Avoid high jumps; focus on rhythm.",
+        "gif": "",
+      },
+      {
+        "name": "Koli Fisher Step",
+        "instructions": "Mimic rowing a boat while stepping side to side like in Marathi folk dances.",
+        "safety": "Keep steps wide and controlled.",
+        "gif": "",
+      },
+    ],
+    "Yoga Flow": [
+      {
+        "name": "Sun Salutation Dance",
+        "instructions": "Flow through gentle yoga poses like reaching up, folding down, and stepping back slowly.",
+        "safety": "Move slowly with breath; avoid strain.",
+        "gif": "",
+      },
+      {
+        "name": "Tree Pose Sway",
+        "instructions": "Stand on one foot, place the other on your ankle, and sway gently like a tree in the wind.",
+        "safety": "Hold a wall for support if needed.",
+        "gif": "",
+      },
+      {
+        "name": "Warrior Groove",
+        "instructions": "Move into a warrior pose and add gentle rhythmic arm movements to soft background beats.",
+        "safety": "Keep knees above ankles; move with control.",
+        "gif": "",
+      },
+      {
+        "name": "Cat-Cow Flow",
+        "instructions": "On hands and knees, alternate between arching and rounding your back in sync with breathing.",
+        "safety": "Move gently; avoid neck strain.",
+        "gif": "",
+      },
+      {
+        "name": "Seated Twist Rhythm",
+        "instructions": "Sit cross-legged and twist gently from side to side, following calm music rhythm.",
+        "safety": "Twist gently; avoid over-rotation.",
+        "gif": "",
+      },
+    ],
+  },
+  "warmup": {
+    "warmupLightExercises": [
+      {
+        "name": "Neck Rotations",
+        "instructions": "Slowly rotate your head in a circular motion, then switch directions after a few turns.",
+        "safety": "Move gently; don’t tilt too far back.",
+        "gif": "",
+      },
+      {
+        "name": "Shoulder Rolls",
+        "instructions": "Roll your shoulders forward in a circular motion, then backward to loosen tension.",
+        "safety": "Keep movements smooth and relaxed.",
+        "gif": "",
+      },
+      {
+        "name": "Arm Circles",
+        "instructions": "Extend arms to the sides and make small circles, gradually making them larger.",
+        "safety": "Avoid fast or jerky movements.",
+        "gif": "",
+      },
+      {
+        "name": "Torso Twists",
+        "instructions": "Stand tall and slowly twist your upper body from side to side.",
+        "safety": "Move gently; avoid over-rotating.",
+        "gif": "",
+      },
+      {
+        "name": "Ankle Rotations",
+        "instructions": "Lift one foot slightly and rotate the ankle slowly in circles, then switch feet.",
+        "safety": "Hold a chair for balance if needed.",
+        "gif": "",
+      },
+      {
+        "name": "Knee Lifts",
+        "instructions": "Lift one knee at a time toward your chest in a marching motion while standing tall.",
+        "safety": "Use support if balance feels unstable.",
+        "gif": "",
+      },
+      {
+        "name": "Side Steps",
+        "instructions": "Step to one side, then bring your other foot to meet it. Repeat slowly in both directions.",
+        "safety": "Step gently; keep knees slightly bent.",
+        "gif": "",
+      },
+      {
+        "name": "Wrist Rotations",
+        "instructions": "Extend arms forward and slowly rotate wrists in both directions.",
+        "safety": "Keep wrists relaxed and avoid locking joints.",
+        "gif": "",
+      },
+      {
+        "name": "Deep Breathing with Arm Raise",
+        "instructions": "Inhale deeply while raising arms overhead, then exhale slowly as you lower them.",
+        "safety": "Move slowly and breathe steadily.",
+        "gif": "",
+      },
+      {
+        "name": "Hip Circles",
+        "instructions": "Place hands on hips and make gentle circular movements with your hips in both directions.",
+        "safety": "Keep movements slow and controlled.",
+        "gif": "",
+      },
+      {
+        "name": "Heel Raises",
+        "instructions": "Stand tall and lift your heels off the ground, balancing on your toes, then lower slowly.",
+        "safety": "Hold a chair for support if needed.",
+        "gif": "",
+      },
+    ],
+  }
 };

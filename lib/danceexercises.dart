@@ -5,6 +5,8 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import 'exerciseScreen.dart';
+
 void main() {
   runApp(DanceExerciseApp());
 }
@@ -70,7 +72,10 @@ class DanceExercisesHomePage extends StatelessWidget {
 
 
               GestureDetector(
-                onTap: () => onBodyPartTap("Arms"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Western Line Dance", exerciseCategory: "danceexercises")));
+
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -106,7 +111,10 @@ class DanceExercisesHomePage extends StatelessWidget {
 
 
               GestureDetector(
-                onTap: () => onBodyPartTap("Legs"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Zumba Fun", exerciseCategory: "danceexercises")));
+
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -142,7 +150,10 @@ class DanceExercisesHomePage extends StatelessWidget {
 
               // Core
               GestureDetector(
-                onTap: () => onBodyPartTap("Core"),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Easy Hip Hop", exerciseCategory: "danceexercises")));
+
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -177,7 +188,10 @@ class DanceExercisesHomePage extends StatelessWidget {
 
               // Hands
               GestureDetector(
-                onTap: () => onBodyPartTap("Hands"),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Gentle Ballet", exerciseCategory: "danceexercises")));
+
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -212,7 +226,10 @@ class DanceExercisesHomePage extends StatelessWidget {
 
               // Neck
               GestureDetector(
-                onTap: () => onBodyPartTap("Neck"),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Folk Fun", exerciseCategory: "danceexercises")));
+
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -247,7 +264,9 @@ class DanceExercisesHomePage extends StatelessWidget {
 
               // Back
               GestureDetector(
-                onTap: () => onBodyPartTap("Back"),
+                onTap: () =>{
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "Yoga Flow", exerciseCategory: "danceexercises")))
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(

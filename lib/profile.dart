@@ -354,9 +354,9 @@ class _ProfileState extends State<Profile> {
 
                 ),
             SizedBox(height: 20,),
+                  ElevatedButton(onPressed: () async {
 
-
-                  ElevatedButton(onPressed: (){},
+                  },
                     child:
 
                     Text("Logout",textAlign:TextAlign.left,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black),),

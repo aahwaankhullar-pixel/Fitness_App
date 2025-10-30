@@ -6,6 +6,8 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import 'exerciseScreen.dart';
+
 class Exercises extends StatefulWidget {
   const Exercises({super.key});
 
@@ -33,28 +35,28 @@ class _ExercisesState extends State<Exercises> {
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-            SizedBox(height: 10,),
-          Row(
-            children: [
-              Image.asset("assets/lion.2.png",width:50),
-              SizedBox(width: 10,),
-              Column(
+              SizedBox(height: 10,),
+              Row(
                 children: [
-              EasyRichText("Exercise time, $nickname 💪 \nChoose your favourite activity, friend!",
-                defaultStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),textAlign: TextAlign.left,
-                patternList: [
-                  EasyRichTextPattern(
-                    targetString: 'Exercise time, $nickname',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  Image.asset("assets/lion.2.png",width:50),
+                  SizedBox(width: 10,),
+                  Column(
+                    children: [
+                      EasyRichText("Exercise time, $nickname 💪 \nChoose your favourite activity, friend!",
+                        defaultStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),textAlign: TextAlign.left,
+                        patternList: [
+                          EasyRichTextPattern(
+                            targetString: 'Exercise time, $nickname',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+
+                    ],
                   ),
                 ],
               ),
-
-                ],
-              ),
-            ],
-          ),
-          SizedBox(height: 20,),
+              SizedBox(height: 20,),
 
               Container(
                 padding: const EdgeInsets.all(16),
@@ -109,7 +111,7 @@ class _ExercisesState extends State<Exercises> {
 
               GestureDetector(
                 onTap: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ExerciseScreen(exerciseType: "warmupLightExercises", exerciseCategory: "warmup")));
                 },
                 child: Container(
                   padding: EdgeInsets.all(20),
@@ -239,48 +241,48 @@ class _ExercisesState extends State<Exercises> {
                   borderRadius: BorderRadius.circular(12),
                 ),
 
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              "Exercise tips!",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold,
-                              ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Exercise tips!",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
                             ),
-                            SizedBox(height: 4),
-                            Text(
-                              "• Start with warm-up exercises to prepare your muscles\n• Take breaks when you need them \n• Have fun and move at your own pace!\n• Don't forget to stay hydrated",
-                              style: TextStyle(color: Colors.black, fontSize: 14),
-                            ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "• Start with warm-up exercises to prepare your muscles\n• Take breaks when you need them \n• Have fun and move at your own pace!\n• Don't forget to stay hydrated",
+                            style: TextStyle(color: Colors.black, fontSize: 14),
+                          ),
+                        ],
                       ),
-                      const Icon(
-                        Icons.directions_run,
-                        color: Colors.white,
-                        size: 40,
-                      ),
-                    ],
-                  ),
+                    ),
+                    const Icon(
+                      Icons.directions_run,
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  ],
+                ),
 
 
 
               ),
-                ],
+            ],
           ),
         ),
       ),
-        );
+    );
 
 
 
   }
 
-  }
+}

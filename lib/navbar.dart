@@ -11,6 +11,7 @@ import "package:google_nav_bar/google_nav_bar.dart";
 import "package:hive/hive.dart";
 
 import "Home.dart";
+import "achievements.dart";
 
 
 
@@ -29,7 +30,7 @@ class _NavBarState extends State<NavBar> {
     Home(),
     Exercises(),
     PropExercises(),
-    Home(),
+    Achievements(),
     Profile()
   ];
 
