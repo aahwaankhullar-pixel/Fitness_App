@@ -324,6 +324,7 @@ class _AchievementsState extends State<Achievements> {
                               "Complete!",
                               style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.green),
                             ),
+                            SizedBox(height: 10,),
                           ],
                         ),
                       ],
