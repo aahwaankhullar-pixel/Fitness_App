@@ -10,6 +10,7 @@ final List<Map<String, dynamic>> challengeMap = [
     'points': 40,
     'icon': "directions_walk",
     'category': 'Steps',
+    "challenge_completed": false,
   },
   {
     'title': 'Steady Strider',
@@ -180,6 +181,8 @@ final List<Map<String, dynamic>> bonusChallenges = [
     "instruction": "Complete all weekly challenges successfully!",
     "icon": "🏆", // 🏆
     "points": 100,
+    "current_progress": 0,
+    "end_goal": 5
   },
   {
     "title": "Consistency Star",

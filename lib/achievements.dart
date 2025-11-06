@@ -1,10 +1,3 @@
-import 'dart:math';
-
-import 'package:downsyndromeapp/Exercises.dart';
-import 'package:downsyndromeapp/bodypartexercise.dart';
-import 'package:downsyndromeapp/danceexercises.dart';
-import 'package:downsyndromeapp/navbar.dart';
-import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:primer_progress_bar/primer_progress_bar.dart';
@@ -18,9 +11,9 @@ class Achievements extends StatefulWidget {
 
 class _AchievementsState extends State<Achievements> {
   final box = Hive.box("User");
-  Map<String, dynamic> today_challenge= {};
-  List<Map<String, dynamic>> bonus_challenges= [];
-  List<Map<String, dynamic>> weekly_challenges= [];
+  Map<dynamic, dynamic> today_challenge= {};
+  List<dynamic> bonus_challenges= [];
+  List<dynamic> weekly_challenges= [];
 
   @override
   void initState() {
@@ -29,9 +22,44 @@ class _AchievementsState extends State<Achievements> {
   }
 
   fetchChallenges() async {
-    today_challenge = await box.get("todays_challenge");
-    weekly_challenges = await box.get("weekly_challenges");
-    bonus_challenges = await box.get("bonus_challenges");
+    today_challenge = await box.get("todays_challenge") ?? {};
+    print(today_challenge);
+    weekly_challenges = await box.get("weekly_challenges") ?? [];
+    print(weekly_challenges);
+    bonus_challenges = await box.get("bonus_challenge") ?? [];
+    print(bonus_challenges);
+    setState(() {}); // Refresh the UI after fetching data
+  }
+
+  final Map<String, IconData> challengeIcons = {
+    "directions_walk": Icons.directions_walk,
+    "directions_run": Icons.directions_run,
+    "self_improvement": Icons.self_improvement,
+    "wb_sunny": Icons.wb_sunny,
+
+    "fitness_center": Icons.fitness_center,
+    "accessibility_new": Icons.accessibility_new,
+    "accessibility": Icons.accessibility,
+    "sports_gymnastics": Icons.sports_gymnastics,
+
+    "sports_tennis": Icons.sports_tennis,
+    "local_drink": Icons.local_drink,
+    "sports_tennis_outlined": Icons.sports_tennis_outlined,
+    "bed": Icons.bed,
+
+    "music_note": Icons.music_note,
+    "queue_music": Icons.queue_music,
+    "directions_run_outlined": Icons.directions_run_outlined,
+    "group": Icons.group,
+
+    "calendar_today": Icons.calendar_today,
+    "explore": Icons.explore,
+    "lightbulb_outline": Icons.lightbulb_outline,
+    "emoji_emotions": Icons.emoji_emotions,
+  };
+
+  IconData getChallengeIcon(String? name) {
+    return challengeIcons[name] ?? Icons.check_circle; // fallback icon
   }
 
   @override
@@ -114,7 +142,6 @@ class _AchievementsState extends State<Achievements> {
           child: Column(
             children: [
               SizedBox(height: 10,),
-
               Container(
                 alignment: Alignment.center,
                 padding: EdgeInsets.all(20),
@@ -173,115 +200,136 @@ class _AchievementsState extends State<Achievements> {
               ),
               SizedBox(height: 20),
 
-              Container(
-                margin: const EdgeInsets.only(bottom: 16),
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                    color: Colors.black12.withOpacity(0.05),
-                    blurRadius: 6,
-                    offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                  // Title Row with Icon
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.orangeAccent,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Icon(
-                          Icons.sports_gymnastics,
-                          color: Colors.white,
-                          size: 28,
+            Container(
+              height: 400,
+              child: weekly_challenges.isEmpty
+                  ? Center(
+                      child: Text(
+                        "No weekly challenges available",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
                         ),
                       ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
+                    )
+                  : ListView.builder(
+                itemCount: weekly_challenges.length,
+                itemBuilder: (context, index) {
+                  final item = weekly_challenges[index];
+                  print(item);
+                  return Container(
+                    margin: const EdgeInsets.only(bottom: 16),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12.withOpacity(0.05),
+                          blurRadius: 6,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Title Row with Icon
+                        Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              'Daily Warm-up',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.orangeAccent,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child:  Icon(
+                                getChallengeIcon(item["icon"] ?? "check_circle"),
+                                color: Colors.white,
+                                size: 28,
                               ),
                             ),
-                            SizedBox(height: 4),
-                            Text(
-                              'Complete warm-up exercises 5 days this week',
-                              style: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 14,
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    item["title"] ?? "Challenge",
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black87,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                   Text(
+                                    item["instruction"] ?? "Complete this challenge",
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
-                  ),
 
-                  const SizedBox(height: 16),
+                        const SizedBox(height: 16),
 
-                  // Progress Row
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Progress: 3/5',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 13,
+                        // Progress Row
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                             Text(
+                              'Progress: ${item["current_progress"] ?? 0}/${item["end_goal"] ?? 0}',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 13,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Color(0xFFEFF0F5),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child:  Text(
+                                '${item["points"] ?? 0}',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFEFF0F5),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: const Text(
-                          '25 pts',
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
 
-                  const SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
-                  challenge1_progressBar,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "100% complete",
-                        style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.grey),
-                      ),
-                      Text(
-                        "Complete!",
-                        style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.green),
-                      ),
-                    ],
-                  ),
-                ],
+                        challenge1_progressBar,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "100% complete",
+                              style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.grey),
+                            ),
+                            Text(
+                              "Complete!",
+                              style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.green),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                }
               ),
             ),
           ],
